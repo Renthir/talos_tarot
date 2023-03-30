@@ -68,6 +68,6 @@ module.exports = {
     },
 
     getAllCards: (req, res) => {
-
+        res.status(200).send(cardDeck.cards)
     }
 }

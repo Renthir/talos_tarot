@@ -3,13 +3,30 @@ const questionform = document.getElementById('question-form')
 const questionText = document.getElementById('user-question')
 const allCards = document.getElementById('show-all')
 const output = document.getElementById('output')
+const artArea = document.getElementById('art-area')
 
 
 function showCards(){
     axios.get(`/api/cards`)
     .then((result) => {
+        let closeBtn = document.createElement('button')
+        closeBtn.setAttribute('id', 'close-button')
+        closeBtn.innerHTML = 'Clear'
+        artArea.appendChild(closeBtn)
+        closeBtn.addEventListener('click', clearArt)
 
+        
+        for (let i = 0; i < result.data.length; i++){
+            let cardArt = document.createElement('div')
+            cardArt.setAttribute('class', 'card-art')
+            cardArt.innerHTML = `<img src="./cards/${result.data[i].img}" alt="${result.data[i].name}"></img>`
+            artArea.appendChild(cardArt)
+        }
     })
+}
+
+function clearArt(){
+    artArea.innerHTML = ''
 }
 
 function getFortune(e){

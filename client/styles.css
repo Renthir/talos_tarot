@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: 'Spectral SC', serif;
 }
 
 /* https://colorhunt.co/palette/fffbf5f7efe5c3acd0674188 */
@@ -19,15 +20,16 @@ header {
 
 header > h1, nav {
     margin: 25px;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    height: 5%;
     bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #CF7ECF;
-
 }
 
 main {
@@ -39,6 +41,7 @@ main {
 
 #card-mat {
     background-color: #F7EFE5;
+    padding: 2.5%;
     grid-column-start: 1;
     grid-column-end: 2;
     display: flex;
@@ -99,4 +102,20 @@ button {
     width: 90%;
     padding: 5px;
     background-color: #FFFBF5;
+}
+
+#close-button {
+    padding: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#art-area {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+
 }
