@@ -2,12 +2,11 @@ const fortuneBtn = document.getElementById('get-fortune')
 const questionform = document.getElementById('question-form')
 const questionText = document.getElementById('user-question')
 const allCards = document.getElementById('show-all')
-
-let url = 'http://localhost:4000'
+const output = document.getElementById('output')
 
 
 function showCards(){
-    axios.get(`${url}/cards`)
+    axios.get(`/api/cards`)
     .then((result) => {
 
     })
@@ -16,9 +15,13 @@ function showCards(){
 function getFortune(e){
     e.preventDefault()
 
-    axios.post(`${url}/fortune`)
+    axios.post(`/api/fortune`)
     .then((result) => {
+        document.getElementById('past-img').src=`./cards/${result.data.spread[0].img}`
+        document.getElementById('present-img').src=`./cards/${result.data.spread[1].img}`
+        document.getElementById('future-img').src=`./cards/${result.data.spread[2].img}`
 
+        output.textContent = result.data.text
     })
 }
 
@@ -26,12 +29,16 @@ function askQuestion(e){
     e.preventDefault()
 
     let body = {
-        question: questionText.value
+        userQuestion: questionText.value
     }
 
-    axios.post(`${url}/question`, body)
+    axios.post(`/api/question`, body)
     .then((result) => {
+        document.getElementById('past-img').src=`./cards/${result.data.spread[0].img}`
+        document.getElementById('present-img').src=`./cards/${result.data.spread[1].img}`
+        document.getElementById('future-img').src=`./cards/${result.data.spread[2].img}`
 
+        output.textContent = result.data.text
     })
 }
 
