@@ -4,6 +4,7 @@ const questionText = document.getElementById('user-question')
 const allCards = document.getElementById('show-all')
 const output = document.getElementById('output')
 const artArea = document.getElementById('art-area')
+const loaders = document.querySelectorAll('.loader')
 
 
 function showCards(){
@@ -32,8 +33,16 @@ function clearArt(){
 function getFortune(e){
     e.preventDefault()
 
+    loaders.forEach(elem => {
+        elem.classList.add('loader-on')
+    })
+
     axios.post(`/api/fortune`)
     .then((result) => {
+        loaders.forEach(elem => {
+            elem.classList.remove('loader-on')
+        })
+        
         document.getElementById('past-img').src=`./cards/${result.data.spread[0].img}`
         document.getElementById('present-img').src=`./cards/${result.data.spread[1].img}`
         document.getElementById('future-img').src=`./cards/${result.data.spread[2].img}`
@@ -45,12 +54,20 @@ function getFortune(e){
 function askQuestion(e){
     e.preventDefault()
 
+    loaders.forEach(elem => {
+        elem.classList.add('loader-on')
+    })
+
     let body = {
         userQuestion: questionText.value
     }
 
     axios.post(`/api/question`, body)
     .then((result) => {
+        loaders.forEach(elem => {
+            elem.classList.remove('loader-on')
+        })
+        
         document.getElementById('past-img').src=`./cards/${result.data.spread[0].img}`
         document.getElementById('present-img').src=`./cards/${result.data.spread[1].img}`
         document.getElementById('future-img').src=`./cards/${result.data.spread[2].img}`

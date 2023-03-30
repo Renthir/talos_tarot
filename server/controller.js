@@ -54,7 +54,7 @@ module.exports = {
             model: "gpt-3.5-turbo",
             messages: [
                 { role: "system", content: `You are a fortune teller who uses Tarot Cards. You pull three cards - Past: '${pastCard.name}'; Present: '${presentCard.name}'; Future: '${futureCard.name}'.` },
-                // { role: "user", content: `Please be brief: What is my fortune?` }
+                // { role: "user", content: `Please ` }
             ]
         })
         .then(result => {

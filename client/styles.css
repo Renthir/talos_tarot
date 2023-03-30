@@ -47,6 +47,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 
 aside {
@@ -93,6 +94,10 @@ output {
 button {
     border-radius: 50px;
     background-color: #C495EC;
+    font-size: 20px;
+    padding: 15px;
+    font-weight: 600;
+
 }
 
 .out {
@@ -102,6 +107,8 @@ button {
     width: 90%;
     padding: 5px;
     background-color: #FFFBF5;
+    line-height: 1.33em;
+    font-weight: 600;
 }
 
 #close-button {
@@ -118,4 +125,25 @@ button {
     gap: 20px;
     justify-content: space-evenly;
 
+}
+
+.loader-on {
+    margin: auto;
+    border: 16px solid lightgray;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+#user-question {
+    height: 50px;
+    width: 300px;
+    font-size: 18px;
 }
