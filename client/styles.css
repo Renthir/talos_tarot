@@ -92,12 +92,18 @@ output {
 }
 
 button {
+    border:hidden;
+    border-color: #CF7ECF;
     border-radius: 50px;
     background-color: #C495EC;
     font-size: 20px;
     padding: 15px;
     font-weight: 600;
+}
 
+button:hover {
+    cursor: pointer;
+    background-color: #C596EC;
 }
 
 .out {
@@ -130,11 +136,15 @@ button {
 .loader-on {
     margin: auto;
     border: 16px solid lightgray;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #C495EC;
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     animation: spin 2s linear infinite
+}
+
+.tarot > .loader-on {
+    margin-top: 50%;
 }
 
 @keyframes spin {
