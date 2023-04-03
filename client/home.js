@@ -21,7 +21,10 @@ function showCards(){
         for (let i = 0; i < result.data.length; i++){
             let cardArt = document.createElement('div')
             cardArt.setAttribute('class', 'card-art')
-            cardArt.innerHTML = `<img src="./cards/${result.data[i].img}" alt="${result.data[i].name}"></img>`
+            cardArt.innerHTML = 
+            `<img src="./cards/${result.data[i].img}" alt="${result.data[i].name}"></img>`
+            // `<h3>${result.data[i].name}</h3>` +
+            // `<h4>${result.data[i].fortune_telling[1].join(', ')}</h4>`;
             artArea.appendChild(cardArt)
         }
     })
@@ -36,8 +39,14 @@ function getFortune(e){
 
     //clears pictures
     document.getElementById('past-img').src=``
+    document.getElementById('past-title').innerHTML=``
+
     document.getElementById('present-img').src=``
+    document.getElementById('present-title').innerHTML=``
+
     document.getElementById('future-img').src=``
+    document.getElementById('future-title').innerHTML=``
+
     output.textContent = 'Your Fortune Will Appear Here!'
 
     //adds loading anims
@@ -53,8 +62,13 @@ function getFortune(e){
         })
         
         document.getElementById('past-img').src=`./cards/${result.data.spread[0].img}`
+        document.getElementById('past-title').innerHTML=`${result.data.spread[0].name}`
+
         document.getElementById('present-img').src=`./cards/${result.data.spread[1].img}`
+        document.getElementById('present-title').innerHTML=`${result.data.spread[1].name}`
+
         document.getElementById('future-img').src=`./cards/${result.data.spread[2].img}`
+        document.getElementById('future-title').innerHTML=`${result.data.spread[2].name}`
 
         output.textContent = result.data.text
     })
@@ -65,8 +79,14 @@ function askQuestion(e){
 
     //clears responses
     document.getElementById('past-img').src=``
+    document.getElementById('past-title').innerHTML=``
+
     document.getElementById('present-img').src=``
+    document.getElementById('present-title').innerHTML=``
+
     document.getElementById('future-img').src=``
+    document.getElementById('future-title').innerHTML=``
+    
     output.textContent = 'Your Fortune Will Appear Here!'
 
     //adds loading anims
@@ -86,8 +106,13 @@ function askQuestion(e){
         })
         
         document.getElementById('past-img').src=`./cards/${result.data.spread[0].img}`
+        document.getElementById('past-title').innerHTML=`${result.data.spread[0].name}`
+
         document.getElementById('present-img').src=`./cards/${result.data.spread[1].img}`
+        document.getElementById('present-title').innerHTML=`${result.data.spread[1].name}`
+
         document.getElementById('future-img').src=`./cards/${result.data.spread[2].img}`
+        document.getElementById('future-title').innerHTML=`${result.data.spread[2].name}`
 
         output.textContent = result.data.text
     })

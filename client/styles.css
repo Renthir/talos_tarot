@@ -63,6 +63,7 @@ aside {
     width: 350px;
     background-color: #5C3892;
     border-radius: 20px;
+    text-align: center;
 }
 
 #fortune_teller {
@@ -167,4 +168,8 @@ button:active {
 #show-all {
     border: solid 1px;
     border-color: #CF7ECF;
+}
+
+.card-art{
+    text-align: center;
 }
