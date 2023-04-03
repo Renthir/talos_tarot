@@ -38,6 +38,7 @@ function getFortune(e){
     document.getElementById('past-img').src=``
     document.getElementById('present-img').src=``
     document.getElementById('future-img').src=``
+    output.textContent = 'Your Fortune Will Appear Here!'
 
     //adds loading anims
     loaders.forEach(elem => {
@@ -62,10 +63,11 @@ function getFortune(e){
 function askQuestion(e){
     e.preventDefault()
 
-    //clears pictures
+    //clears responses
     document.getElementById('past-img').src=``
     document.getElementById('present-img').src=``
     document.getElementById('future-img').src=``
+    output.textContent = 'Your Fortune Will Appear Here!'
 
     //adds loading anims
     loaders.forEach(elem => {

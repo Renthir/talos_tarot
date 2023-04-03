@@ -55,7 +55,7 @@ module.exports = {
         openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: `You are a fortune teller who uses Tarot Cards. You pull three cards - Past: '${pastCard.name}'; Present: '${presentCard.name}'; Future: '${futureCard.name}'.` },
+                { role: "system", content: `Roleplay as a fortune teller who uses Tarot Cards. You pull three cards - Past: '${pastCard.name}'; Present: '${presentCard.name}'; Future: '${futureCard.name}'.` },
                 { role: "user", content: `Please tell my fortune based on my question: '${userQuestion}'` }
             ]
         })
@@ -72,12 +72,12 @@ module.exports = {
 
     getGeneralFortune: (req, res) => {
         let { pastCard, presentCard, futureCard } = getTarotSpread()
-        
+
         //calls openai and returns a buncha info, including an AI generated 'chat completion'
         openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [
-                { role: "system", content: `You are a fortune teller who uses Tarot Cards. You pull three cards - Past: '${pastCard.name}'; Present: '${presentCard.name}'; Future: '${futureCard.name}'.` },
+                { role: "system", content: `Roleplay as a fortune teller who uses Tarot Cards. You pull three cards - Past: '${pastCard.name}'; Present: '${presentCard.name}'; Future: '${futureCard.name}'.` },
                 // { role: "user", content: `Please ` }
             ]
         })
