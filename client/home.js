@@ -10,13 +10,14 @@ const loaders = document.querySelectorAll('.loader')
 function showCards(){
     axios.get(`/api/cards`)
     .then((result) => {
+        //adds clear button to new art area
         let closeBtn = document.createElement('button')
         closeBtn.setAttribute('id', 'close-button')
         closeBtn.innerHTML = 'Clear'
         artArea.appendChild(closeBtn)
         closeBtn.addEventListener('click', clearArt)
 
-        
+        //adds all the art to the art area
         for (let i = 0; i < result.data.length; i++){
             let cardArt = document.createElement('div')
             cardArt.setAttribute('class', 'card-art')
@@ -33,10 +34,12 @@ function clearArt(){
 function getFortune(e){
     e.preventDefault()
 
+    //adds loading anims
     loaders.forEach(elem => {
         elem.classList.add('loader-on')
     })
 
+    //calls server to get fortune and prints it and adds cards
     axios.post(`/api/fortune`)
     .then((result) => {
         loaders.forEach(elem => {
@@ -54,6 +57,7 @@ function getFortune(e){
 function askQuestion(e){
     e.preventDefault()
 
+    //adds loading anims
     loaders.forEach(elem => {
         elem.classList.add('loader-on')
     })
@@ -62,6 +66,7 @@ function askQuestion(e){
         userQuestion: questionText.value
     }
 
+    //calls server to get fortune and prints it and adds cards
     axios.post(`/api/question`, body)
     .then((result) => {
         loaders.forEach(elem => {

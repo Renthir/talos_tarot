@@ -93,17 +93,22 @@ output {
 
 button {
     border:hidden;
-    border-color: #CF7ECF;
+    /* border-color: #CF7ECF; */
     border-radius: 50px;
-    background-color: #C495EC;
+    /* background-color: #C495EC; */
     font-size: 20px;
     padding: 15px;
     font-weight: 600;
+    background: linear-gradient(#C495EC, #974cd9);
 }
 
 button:hover {
     cursor: pointer;
     background-color: #C596EC;
+}
+
+button:active {
+    background: linear-gradient(#974cd9, #C495EC);
 }
 
 .out {
@@ -144,7 +149,7 @@ button:hover {
 }
 
 .tarot > .loader-on {
-    margin-top: 50%;
+    margin-top: 60%;
 }
 
 @keyframes spin {
@@ -156,4 +161,10 @@ button:hover {
     height: 50px;
     width: 300px;
     font-size: 18px;
+    margin-left: 15px;
+}
+
+#show-all {
+    border: solid 1px;
+    border-color: #CF7ECF;
 }
