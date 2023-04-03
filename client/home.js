@@ -34,6 +34,11 @@ function clearArt(){
 function getFortune(e){
     e.preventDefault()
 
+    //clears pictures
+    document.getElementById('past-img').src=``
+    document.getElementById('present-img').src=``
+    document.getElementById('future-img').src=``
+
     //adds loading anims
     loaders.forEach(elem => {
         elem.classList.add('loader-on')
@@ -56,6 +61,11 @@ function getFortune(e){
 
 function askQuestion(e){
     e.preventDefault()
+
+    //clears pictures
+    document.getElementById('past-img').src=``
+    document.getElementById('present-img').src=``
+    document.getElementById('future-img').src=``
 
     //adds loading anims
     loaders.forEach(elem => {

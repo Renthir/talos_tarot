@@ -72,6 +72,7 @@ module.exports = {
 
     getGeneralFortune: (req, res) => {
         let { pastCard, presentCard, futureCard } = getTarotSpread()
+        
         //calls openai and returns a buncha info, including an AI generated 'chat completion'
         openai.createChatCompletion({
             model: "gpt-3.5-turbo",
