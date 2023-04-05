@@ -60,7 +60,6 @@ module.exports = {
             ]
         })
         .then(result => {
-            //  console.log(result.data.choices[0].message.content)
             //Sends cards and message to client
             let fortune = {
                 text: result.data.choices[0].message.content,
@@ -82,7 +81,6 @@ module.exports = {
             ]
         })
         .then(result => {
-            //  console.log(result.data.choices[0].message.content)
             //Sends cards and message to client
             let fortune = {
                 text: result.data.choices[0].message.content,

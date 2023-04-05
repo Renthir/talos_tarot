@@ -21,8 +21,7 @@ function showCards(){
         for (let i = 0; i < result.data.length; i++){
             let cardArt = document.createElement('div')
             cardArt.setAttribute('class', 'card-art')
-            cardArt.innerHTML = 
-            `<img src="./cards/${result.data[i].img}" alt="${result.data[i].name}"></img>`
+            cardArt.innerHTML = `<img src="./cards/${result.data[i].img}" alt="${result.data[i].name}"></img>`
             // `<h3>${result.data[i].name}</h3>` +
             // `<h4>${result.data[i].fortune_telling[1].join(', ')}</h4>`;
             artArea.appendChild(cardArt)
