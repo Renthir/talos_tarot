@@ -11,9 +11,3 @@ Technologies Used:
  - Javascript
  - Express 
  - OpenAI API
-
-
-Future Features:
-I plan to add the ability to switch between two decks or more. 
-Send the images from the backend to reduce initial bandwidth. 
-Have the cards flip to reveal the spread, like real cards instead of just appearing. 
